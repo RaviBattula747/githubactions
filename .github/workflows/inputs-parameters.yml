@@ -1,0 +1,14 @@
+name: usuage of inputs and parameters
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Choose the environment to deploy
+        required: true
+        default: dev
+jobs:
+  inpr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy to the selected env
+        run: echo "this is the ${{ inputs.environment }} application"
