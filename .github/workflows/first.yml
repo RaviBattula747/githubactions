@@ -9,4 +9,8 @@ jobs:
         run: |
           echo "Welcome to the world"
           echo "I am your guide"
-        
+  secondJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ravi
+        run: echo "This is a beautiful world"
