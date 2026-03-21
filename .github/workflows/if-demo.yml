@@ -22,7 +22,7 @@ jobs:
         run: echo "It is triggered by either ravibattula747 or chandra747"
   build:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main'
     steps:
       - name: deciding the execution based on the type
         run: echo "building the application"
