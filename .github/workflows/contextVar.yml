@@ -13,4 +13,4 @@ jobs:
           echo "This workflow is triggered by $ {{ github.ref }} reference"
           echo "This workflow is triggered by $ {{ github.sha }} sha"
       - name: print all thevariables undr github
-        run: "${{ toJson(github) }}"
+        run: echo "${{ toJson(github) }}"
