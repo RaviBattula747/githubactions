@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Hello multiline step
         run: |
-        echo "Welcome to the world"
-        echo "I am your guide"
+          echo "Welcome to the world"
+          echo "I am your guide"
         
