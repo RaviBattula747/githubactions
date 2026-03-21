@@ -17,5 +17,5 @@ jobs:
     needs: build
     steps:
       - name: Deploy the App
-        run: echo "deploy the app with the previous job output version ${{ needs.build.outputs.raviout }}"
+        run: echo "deploy the app with the previous job output ${{ needs.build.outputs.raviout }}"
     
