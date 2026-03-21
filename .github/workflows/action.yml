@@ -1,5 +1,5 @@
 name: github workflow
-on:
+on: push
 jobs:
   actions-usecase:
     runs-on: ubuntu-latest
