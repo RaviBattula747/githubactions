@@ -14,3 +14,7 @@ jobs:
           echo "This workflow is triggered by ${{ github.sha }} sha"
       - name: print all thevariables undr github
         run: echo "${{ toJson(github) }}"
+      - name: print all the env variables under github
+        run: printenv
+      - name: print env variables
+        run: echo "$GITHUB_SHA"
