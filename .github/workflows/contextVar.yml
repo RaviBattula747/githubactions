@@ -1,0 +1,16 @@
+name: context demo
+on: workflow_dispatch
+jobs:
+  context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: use context variables
+        run: |
+          echo "This workflow is triggered by $ {{ github.actor }}"
+          echo "This workflow name is $ {{ github.workflow }}"
+          echo "This workflow is triggered by type $ {{ github.event_name }}"
+          echo "This workflow is triggered in $ {{ github.repository }} repository"
+          echo "This workflow is triggered by $ {{ github.ref }} reference"
+          echo "This workflow is triggered by $ {{ github.sha }} sha"
+      - name: print all thevariables undr github
+        run: "${{ toJson(github) }}"
