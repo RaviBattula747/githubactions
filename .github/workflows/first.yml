@@ -33,4 +33,4 @@ jobs:
       - name: printing the variable value
         run: |
           echo "value is: ${{ vars.FIRSTVARIABLE }}"
-          echo "value is: ${{ vars.FIRSTSECRET }}"
+          echo "value is: ${{ secrets.FIRSTSECRET }}"
