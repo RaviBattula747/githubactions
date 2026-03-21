@@ -27,3 +27,8 @@ jobs:
     steps:
       - name: Ravi
         run: echo "This is a beautiful world"
+  variablePrint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: printing the variable value
+        run: echo "value is: $(FIRSTVARIABLE)"
