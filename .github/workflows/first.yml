@@ -31,4 +31,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: printing the variable value
-        run: echo "value is: $(FIRSTVARIABLE)"
+        run: echo "value is: ${{ FIRSTVARIABLE }}"
