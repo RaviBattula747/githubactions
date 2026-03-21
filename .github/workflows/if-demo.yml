@@ -13,3 +13,6 @@ jobs:
         run: echo "Running this for main step"
       - name: Run without condition
         run: echo "Running this for main step"
+      - name: run for RaviBattula747 or chandra747
+        if: github.actor == 'ravibattula747' || github.actor == 'chandra747'
+        run: echo "It is triggered by either ravibattula747 or chandra747"
