@@ -8,9 +8,10 @@ jobs:
     steps:
       - name: step one
         id: step1
-        run: echo "ravi=Hero" >> "$GITHUB_OUTPUT"
+        run: echo "ravi=Hero" >> $GITHUB_OUTPUT
       - name: step 2
-        run: echo "this is the output form the step one: ${{ steps.step1.outputs.ravi }}"
+        run: |
+          echo "this is the output form the step one: ${{ steps.step1.outputs.ravi }}"
   deploy:
     runs-on: ubuntu-latest
     needs: build
