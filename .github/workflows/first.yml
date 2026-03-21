@@ -1,10 +1,11 @@
 name: hello world
-on: workflow_dispatch
+on: 
+  workflow_dispatch
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello step
+      - name: Hello multiline step
         run: |
         echo "Welcome to the world"
         echo "I am your guide"
