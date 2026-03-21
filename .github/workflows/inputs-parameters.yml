@@ -1,14 +1,21 @@
-name: usuage of inputs and parameters
-on: 
+name: inputs&parameters
+on:
   workflow_dispatch:
     inputs:
       environment:
         description: Choose the environment to deploy
         required: true
         default: dev
+        options:
+          - dev
+          - test
+          - prod
+      artificate-tag:
+        description: chhoose the git tag to deploy
+        required: true
 jobs:
   inpr:
     runs-on: ubuntu-latest
     steps:
       - name: deploy to the selected env
-        run: echo "this is the ${{ inputs.environment }} application"
+        run: echo "this is the ${{ inputs.environment }} application of version ${{ inputs.artificate-tag }}"
