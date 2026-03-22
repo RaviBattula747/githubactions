@@ -61,7 +61,7 @@ jobs:
   failureNotify:
     runs-on: ubuntu-latest
     needs: ['qualityChecks','devDeploy','prdDeploy']
-    if: always() && !success()
+    if: failure()
     steps:
       - name: Notify failure
         run: echo "Execution failed"
