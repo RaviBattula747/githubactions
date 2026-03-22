@@ -64,5 +64,7 @@ jobs:
     if: failure()
     steps:
       - name: Notify failure
-        run: echo "Execution failed"
+        run: |
+          echo "Execution failed"
+          exit 1  # for failur test case
 
