@@ -6,4 +6,4 @@ jobs:
   call-greetings:
     uses: ./.github/workflows/resuableWorklow.yml
     with:
-      names: "Ravi Chandra"
+      name: "Ravi Chandra"
