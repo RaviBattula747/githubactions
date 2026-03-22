@@ -32,4 +32,36 @@ jobs:
     steps:
       - name: deploy step
         run: echo "deploying the application"
-        
+
+  qualityChecks:
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref_name, 'feature') && github.event_name == 'push'
+    steps:
+      - name: perform code quality
+        run: echo "Performing code quality to the code"
+  devDeploy:
+    runs-on: ubuntu-latest
+    if: github.ref_name == 'develop' && github.event_name == 'push'
+    steps:
+      - name: dev deploy
+        run: echo "deploying the code to deployment environment"
+  prdDeploy:
+    runs-on: ubuntu-latest
+    if: github.ref_name == 'main' && github.event_name == 'push'
+    steps:
+      - name: prod deploy
+        run: echo "deploying the code to production environment"
+  SuccessNotify:
+    runs-on: ubuntu-latest
+    needs: ['qualityChecks','devDeploy','prdDeploy']
+    if: always() && !failure()
+    steps:
+      - name: Notify success
+        run: echo "Execution successful"
+  failureNotify:
+    runs-on: ubuntu-latest
+    needs: ['qualityChecks','devDeploy','prdDeploy']
+    if: always() && !success()
+    steps:
+      - name: Notify failure
+        run: echo "Execution failed"
