@@ -52,7 +52,7 @@ jobs:
       - name: prod deploy
         run:  |
           echo "deploying the code to production environment"
-          exit 1  # for failur test case
+        #  exit 1  # for failur test case
   SuccessNotify:
     runs-on: ubuntu-latest
     needs: ['qualityChecks','devDeploy','prdDeploy']
